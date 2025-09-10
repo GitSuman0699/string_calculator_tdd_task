@@ -25,5 +25,9 @@ void main() {
       int result = calculator.add('1,2,3,4,5');
       expect(result, equals(15));
     });
+    test('add_NumbersWithNewlines_ReturnsSum', () {
+      int result = calculator.add('1\n2,3');
+      expect(result, equals(6));
+    });
   });
 }
