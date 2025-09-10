@@ -29,5 +29,9 @@ void main() {
       int result = calculator.add('1\n2,3');
       expect(result, equals(6));
     });
+    test('add_CustomDelimiter_ReturnsSum', () {
+      int result = calculator.add('//;\n1;2');
+      expect(result, equals(3));
+    });
   });
 }
