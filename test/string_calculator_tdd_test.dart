@@ -21,5 +21,9 @@ void main() {
       int result = calculator.add('1,2');
       expect(result, equals(3));
     });
+    test('add_MultipleNumbers_ReturnsSum', () {
+      int result = calculator.add('1,2,3,4,5');
+      expect(result, equals(15));
+    });
   });
 }
