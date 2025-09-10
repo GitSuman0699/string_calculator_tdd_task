@@ -4,4 +4,5 @@ import 'package:string_calculator_tdd/string_calculator_tdd.dart'
 void main() {
   var calculator = string_calculator_tdd.StringCalculator();
   print('Empty string: ${calculator.add('')}'); // 0
+  print('Single number: ${calculator.add('1')}'); // 1
 }
