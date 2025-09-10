@@ -8,5 +8,10 @@ void main() {
     setUp(() {
       calculator = StringCalculator();
     });
+
+    test('add_EmptyString_ReturnsZero', () {
+      int result = calculator.add('');
+      expect(result, equals(0));
+    });
   });
 }
