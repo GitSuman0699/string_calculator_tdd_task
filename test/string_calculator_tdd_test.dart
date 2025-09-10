@@ -33,14 +33,25 @@ void main() {
       int result = calculator.add('//;\n1;2');
       expect(result, equals(3));
     });
+
     test('add_NegativeNumber_ThrowsException', () {
       expect(
         () => calculator.add('1,-2,3'),
         throwsA(
-          isA<ArgumentError>().having(
-            (e) => e.message,
-            'message',
-            contains('negative number not allowed -2'),
+          predicate(
+            (e) =>
+                e is Exception &&
+                e.toString().contains('negative numbers not allowed: -2'),
+          ),
+        ),
+      );
+      expect(
+        () => StringCalculator().add('-1,2,-3'),
+        throwsA(
+          predicate(
+            (e) =>
+                e is Exception &&
+                e.toString().contains('negative numbers not allowed: -1,-3'),
           ),
         ),
       );

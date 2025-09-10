@@ -9,4 +9,6 @@ void main() {
   print('Multiple numbers: ${calculator.add('1,2,3,4,5')}'); // 15
   print('Numbers with newlines: ${calculator.add('1\n2,3')}'); // 6
   print('Custom delimiter: ${calculator.add('//;\n1;2;3')}'); // 6
+  print('Negative number: ${calculator.add('1,-2,3')}'); // Exception
+  print('Negative numbers: ${calculator.add('1,-2,-3')}'); // Exception
 }

@@ -18,7 +18,11 @@ class StringCalculator {
     }
 
     List<int> numberList = _extractNumbers(numbersToProcess, delimiter);
-
+    // Check for negative numbers and throw exception
+    List<int> negatives = numberList.where((number) => number < 0).toList();
+    if (negatives.isNotEmpty) {
+      throw Exception('negative numbers not allowed: ${negatives.join(",")}');
+    }
     return numberList.fold(0, (sum, number) => sum + number);
   }
 
