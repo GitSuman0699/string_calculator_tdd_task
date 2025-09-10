@@ -17,5 +17,9 @@ void main() {
       int result = calculator.add('1');
       expect(result, equals(1));
     });
+    test('add_TwoNumbers_ReturnsSum', () {
+      int result = calculator.add('1,2');
+      expect(result, equals(3));
+    });
   });
 }
