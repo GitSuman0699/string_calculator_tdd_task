@@ -13,5 +13,9 @@ void main() {
       int result = calculator.add('');
       expect(result, equals(0));
     });
+    test('add_SingleNumber_ReturnsNumber', () {
+      int result = calculator.add('1');
+      expect(result, equals(1));
+    });
   });
 }
